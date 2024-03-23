@@ -17,6 +17,7 @@ Specifikacija projekta za informacijski sustav obuhvaća upravljanje narudžbama
 (U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
 
 ## Resursi
+https://github.com/foivz/pi2024-zadace-Mjuric22/wiki/Zadaća-1
 (Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
 
 Svi resursi nalaze se u mapi _Documentation_.
