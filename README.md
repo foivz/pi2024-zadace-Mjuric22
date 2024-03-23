@@ -17,7 +17,7 @@ Specifikacija projekta za informacijski sustav obuhvaća upravljanje narudžbama
 [Documentation/Zadatak - SCVZ.pdf](https://github.com/foivz/pi2024-zadace-Mjuric22/blob/b3862f203fc7f3f9c48582e7fd17d3a0ee06be5b/Documentation/Zadatak%20-%20SCVZ.pdf)
 
 ## Resursi
-[https://github.com/foivz/pi2024-zadace-Mjuric22/wiki/Zadaća-1](https://github.com/foivz/pi2024-zadace-Mjuric22.wiki.git)
+[[https://github.com/foivz/pi2024-zadace-Mjuric22/wiki/Zadaća-1](https://github.com/foivz/pi2024-zadace-Mjuric22.wiki.git)](https://github.com/foivz/pi2024-zadace-Mjuric22/wiki/Korisnički-zahtjevi-za-sustav-praćenja-narudžbi-u-studentskom-restoranu)
 (Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
 
 Svi resursi nalaze se u mapi _Documentation_.
