@@ -14,6 +14,7 @@ Domena problema koju pokriva informacijski sustav za praćenje narudžbi u stude
 Specifikacija projekta za informacijski sustav obuhvaća upravljanje narudžbama, ocjenjivanje obroka, sprječiti zlouporabu, provjeru korisnika, nagrađivanje ocjenjivanja te optimizaciju procesa kroz praćenje popularnosti jela i brzinu pripreme.
 
 ## Zadatak
+Documentation/Zadatak - SCVZ.pdf
 (U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
 
 ## Resursi
