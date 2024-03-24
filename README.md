@@ -18,6 +18,6 @@ Specifikacija projekta za informacijski sustav obuhvaća upravljanje narudžbama
 
 ## Resursi
 (https://github.com/foivz/pi2024-zadace-Mjuric22/wiki/Korisnički-zahtjevi-za-sustav-praćenja-narudžbi-u-studentskom-restoranu)
-(Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
+
 
 Svi resursi nalaze se u mapi _Documentation_.
