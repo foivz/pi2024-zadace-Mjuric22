@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\AMD\Downloads\DBLayer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPopisJela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPopisJela.Designer.cs">
+      <DependentUpon>frmPopisJela.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmPopisJela.resx">
+      <DependentUpon>frmPopisJela.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +100,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dlls\DBLayer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Repozitoris\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

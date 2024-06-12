@@ -21,6 +21,33 @@ namespace SZUUP
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = UsernameTxt.Text;
+            string password = PasswordTxt.Text;
+
+            // Provjera korisničkih podataka
+            var zaposlenik = StudentRepository.GetStudent(username);
+
+            if (zaposlenik != null && student.Password == password)
+            {
+                // Uspješna prijava
+                MessageBox.Show("Login successful!");
+
+                // Otvorite MainForm
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+
+                // Sakrijte trenutnu formu
+                this.Hide();
+            }
+            else
+            {
+                // Neuspješna prijava
+                MessageBox.Show("Invalid username or password!");
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "")
@@ -41,8 +68,9 @@ namespace SZUUP
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Open the FrmUnos form
-                    FrmUnos frmUnos = new FrmUnos();
-                    frmUnos.Show();
+                    
+                    frmPopisJela frmPopisJela = new frmPopisJela();
+                    frmPopisJela.Show();
                     this.Hide(); // Hide the current login form
                 }
                 else
