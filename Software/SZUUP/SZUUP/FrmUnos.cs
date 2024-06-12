@@ -19,7 +19,15 @@ namespace SZUUP
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            // Save button click event handler
+            // Show a confirmation dialog
+            var result = MessageBox.Show("Jeste li sigurni da želite spremiti podatke?", "Potvrda",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If the user clicks "Yes" or "No," do nothing and return to the current form
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Podaci su uspješno spremljeni.", "Uspjeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
