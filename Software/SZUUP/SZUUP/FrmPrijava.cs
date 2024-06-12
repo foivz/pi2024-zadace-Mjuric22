@@ -23,11 +23,11 @@ namespace SZUUP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = UsernameTxt.Text;
-            string password = PasswordTxt.Text;
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
 
             // Provjera korisničkih podataka
-            var zaposlenik = StudentRepository.GetStudent(username);
+            var zaposlenik = RepozitorijZaposlenik.GetZaposlenik(username);
 
             if (zaposlenik != null && student.Password == password)
             {
