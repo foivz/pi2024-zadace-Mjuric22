@@ -24,7 +24,18 @@ namespace SZUUP
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
-            // Cancel button click event handler
+            // Show a confirmation dialog
+            var result = MessageBox.Show("Odustajete od unosa jela?", "Potvrda",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If the user clicks "Yes," close the current form and show the login form
+            if (result == DialogResult.Yes)
+            {
+                FrmPrijava frmPrijava = new FrmPrijava();
+                frmPrijava.Show();
+                this.Close(); // Close the current form
+            }
+            // If the user clicks "No," do nothing and return to the current form
         }
 
         private void btnUredi_Click(object sender, EventArgs e)

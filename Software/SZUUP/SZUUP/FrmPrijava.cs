@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace SZUUP
 {
@@ -41,6 +39,11 @@ namespace SZUUP
                 {
                     MessageBox.Show("Dobrodošli!", "Prijavljeni ste",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Open the FrmUnos form
+                    FrmUnos frmUnos = new FrmUnos();
+                    frmUnos.Show();
+                    this.Hide(); // Hide the current login form
                 }
                 else
                 {

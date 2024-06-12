@@ -172,7 +172,7 @@
             // 
             // FrmUnos
             // 
-            this.ClientSize = new System.Drawing.Size(542, 449);
+            this.ClientSize = new System.Drawing.Size(566, 449);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
