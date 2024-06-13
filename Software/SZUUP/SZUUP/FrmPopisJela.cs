@@ -21,7 +21,8 @@ namespace SZUUP
             btnPretraziJelo.Click += new EventHandler(this.btnPretraziJelo_Click);
             btnUrediJelo.Click += new EventHandler(this.btnUrediJelo_Click);
             btnObrisiJelo.Click += new EventHandler(this.btnObrisiJelo_Click);
-            btnZaposlenici.Click += new EventHandler(this.btnZaposlenici_Click); // Manually added this line
+            btnZaposlenici.Click += new EventHandler(this.btnZaposlenici_Click);
+            btnSvaJela.Click += new EventHandler(this.btnSvaJela_Click); // Added this line
         }
 
         private void FrmPopisJela_Load(object sender, EventArgs e)
@@ -73,6 +74,11 @@ namespace SZUUP
             {
                 MessageBox.Show("Jelo nije pronađeno.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnSvaJela_Click(object sender, EventArgs e)
+        {
+            dgvJela.DataSource = allJela; // Reset to show all meals
         }
 
         private void btnUrediJelo_Click(object sender, EventArgs e)
@@ -131,6 +137,5 @@ namespace SZUUP
             FrmZaposlenici frmZaposlenici = new FrmZaposlenici();
             frmZaposlenici.ShowDialog();
         }
-
     }
 }

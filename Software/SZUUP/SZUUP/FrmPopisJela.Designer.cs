@@ -35,6 +35,7 @@
             this.btnPretraziJelo = new System.Windows.Forms.Button();
             this.txtPretrazi = new System.Windows.Forms.TextBox();
             this.btnZaposlenici = new System.Windows.Forms.Button();
+            this.btnSvaJela = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJela)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,21 @@
             this.btnZaposlenici.UseVisualStyleBackColor = true;
             this.btnZaposlenici.Click += new System.EventHandler(this.btnZaposlenici_Click);
             // 
+            // btnSvaJela
+            // 
+            this.btnSvaJela.Location = new System.Drawing.Point(164, 563);
+            this.btnSvaJela.Name = "btnSvaJela";
+            this.btnSvaJela.Size = new System.Drawing.Size(146, 43);
+            this.btnSvaJela.TabIndex = 7;
+            this.btnSvaJela.Text = "Sva jela";
+            this.btnSvaJela.UseVisualStyleBackColor = true;
+            // 
             // FrmPopisJela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 632);
+            this.Controls.Add(this.btnSvaJela);
             this.Controls.Add(this.btnZaposlenici);
             this.Controls.Add(this.txtPretrazi);
             this.Controls.Add(this.btnPretraziJelo);
@@ -141,5 +152,6 @@
         private System.Windows.Forms.Button btnPretraziJelo;
         private System.Windows.Forms.TextBox txtPretrazi;
         private System.Windows.Forms.Button btnZaposlenici;
+        private System.Windows.Forms.Button btnSvaJela;
     }
 }
