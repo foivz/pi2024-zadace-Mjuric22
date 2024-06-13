@@ -13,5 +13,7 @@ namespace SZUUP.Models
         public string Naziv { get; set; }
         public float Cijena { get; set; }
         public string Detalji { get; set; }
+
+        // Ovdje možete dodati dodatne atribute i metode specifične za Jelo ako je potrebno
     }
 }

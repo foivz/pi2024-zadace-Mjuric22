@@ -10,7 +10,6 @@
         private System.Windows.Forms.TextBox txtDetalji;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnOdustani;
-        private System.Windows.Forms.Button btnUredi;
 
         protected override void Dispose(bool disposing)
         {
@@ -30,7 +29,6 @@
             this.txtDetalji = new System.Windows.Forms.TextBox();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
-            this.btnUredi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,23 +94,13 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(414, 391);
+            this.btnOdustani.Location = new System.Drawing.Point(283, 391);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(86, 34);
             this.btnOdustani.TabIndex = 6;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
-            // 
-            // btnUredi
-            // 
-            this.btnUredi.Location = new System.Drawing.Point(299, 391);
-            this.btnUredi.Name = "btnUredi";
-            this.btnUredi.Size = new System.Drawing.Size(82, 34);
-            this.btnUredi.TabIndex = 7;
-            this.btnUredi.Text = "Uredi";
-            this.btnUredi.UseVisualStyleBackColor = true;
-            this.btnUredi.Click += new System.EventHandler(this.btnUredi_Click);
             // 
             // label1
             // 
@@ -162,13 +150,12 @@
             // 
             // FrmUnos
             // 
-            this.ClientSize = new System.Drawing.Size(566, 449);
+            this.ClientSize = new System.Drawing.Size(418, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.txtDetalji);
