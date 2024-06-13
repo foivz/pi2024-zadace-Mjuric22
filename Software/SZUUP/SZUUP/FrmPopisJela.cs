@@ -43,7 +43,10 @@ namespace SZUUP
         private void btnDodajJelo_Click(object sender, EventArgs e)
         {
             FrmUnos frmUnos = new FrmUnos();
-            frmUnos.ShowDialog();
+            if (frmUnos.ShowDialog() == DialogResult.OK)
+            {
+                ShowJela(); // Refresh the list of meals
+            }
         }
 
         private void btnPretraziJelo_Click(object sender, EventArgs e)
@@ -53,12 +56,43 @@ namespace SZUUP
 
         private void btnUrediJelo_Click(object sender, EventArgs e)
         {
-            // Code to handle edit functionality
+            if (dgvJela.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Odaberite jelo za uređivanje.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int selectedRowIndex = dgvJela.SelectedRows[0].Index;
+            int selectedJeloId = (int)dgvJela.Rows[selectedRowIndex].Cells["Id_jelo"].Value;
+
+            Jelo selectedJelo = JeloRepozitorij.GetJelo(selectedJeloId);
+
+            using (FrmUnos frmUnos = new FrmUnos(selectedJelo))
+            {
+                if (frmUnos.ShowDialog() == DialogResult.OK)
+                {
+                    ShowJela(); // Refresh the list after editing
+                }
+            }
         }
 
         private void btnObrisiJelo_Click(object sender, EventArgs e)
         {
-            // Code to handle delete functionality
+            if (dgvJela.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Odaberite jelo za brisanje.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int selectedRowIndex = dgvJela.SelectedRows[0].Index;
+            int selectedJeloId = (int)dgvJela.Rows[selectedRowIndex].Cells["Id_jelo"].Value;
+
+            var result = MessageBox.Show("Jeste li sigurni da želite obrisati odabrano jelo?", "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                JeloRepozitorij.ObrisiJelo(selectedJeloId);
+                ShowJela(); // Refresh the list after deletion
+            }
         }
 
         private void dgvPopisJela_CellContentClick(object sender, DataGridViewCellEventArgs e)

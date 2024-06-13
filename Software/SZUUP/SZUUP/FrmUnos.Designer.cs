@@ -4,7 +4,7 @@
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.ComboBox cmbKategorija;
         private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.TextBox txtDetalji;
@@ -23,7 +23,7 @@
         private void InitializeComponent()
         {
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
             this.cmbKategorija = new System.Windows.Forms.ComboBox();
             this.txtCijena = new System.Windows.Forms.TextBox();
             this.txtDetalji = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@
             this.txtID.Size = new System.Drawing.Size(230, 26);
             this.txtID.TabIndex = 0;
             // 
-            // txtIme
+            // txtNaziv
             // 
-            this.txtIme.Location = new System.Drawing.Point(120, 98);
-            this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(217, 26);
-            this.txtIme.TabIndex = 1;
+            this.txtNaziv.Location = new System.Drawing.Point(120, 98);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(217, 26);
+            this.txtNaziv.TabIndex = 1;
             // 
             // cmbKategorija
             // 
@@ -161,7 +161,7 @@
             this.Controls.Add(this.txtDetalji);
             this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.cmbKategorija);
-            this.Controls.Add(this.txtIme);
+            this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.txtID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
