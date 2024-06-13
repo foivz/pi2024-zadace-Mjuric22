@@ -51,7 +51,30 @@ namespace SZUUP
 
         private void btnPretraziJelo_Click(object sender, EventArgs e)
         {
-            // Code to handle search functionality
+            string searchQuery = txtPretrazi.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchQuery))
+            {
+                MessageBox.Show("Unesite naziv jela za pretragu.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool found = false;
+            foreach (DataGridViewRow row in dgvJela.Rows)
+            {
+                if (row.Cells["Naziv"].Value != null && row.Cells["Naziv"].Value.ToString().Equals(searchQuery, StringComparison.OrdinalIgnoreCase))
+                {
+                    row.Selected = true;
+                    dgvJela.FirstDisplayedScrollingRowIndex = row.Index; // Scroll to the selected row
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("Jelo nije pronađeno.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnUrediJelo_Click(object sender, EventArgs e)
