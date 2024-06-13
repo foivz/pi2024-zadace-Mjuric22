@@ -14,8 +14,8 @@ namespace SZUUP
     public partial class FrmPrijava : Form
     {
         // Deklaracija varijabli na razini klase
-        private string username = "nastavnik";
-        private string password = "test";
+        private string predefinedUsername = "nastavnik";
+        private string predefinedPassword = "test";
 
         public FrmPrijava()
         {
@@ -27,25 +27,33 @@ namespace SZUUP
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            // Provjera korisničkih podataka
-            var zaposlenik = RepozitorijZaposlenik.GetZaposlenik(username);
-
-            if (zaposlenik != null && zaposlenik.Password == password)
+            // Pretpostavimo da je username zapravo ID koji je integer
+            if (int.TryParse(username, out int userId))
             {
-                // Uspješna prijava
-                MessageBox.Show("Login successful!");
+                // Provjera korisničkih podataka
+                var zaposlenik = ZaposlenikRepozitorij.GetZaposlenik(userId);
 
-                // Otvorite MainForm
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
+                if (zaposlenik != null && zaposlenik.Lozinka == password)
+                {
+                    // Uspješna prijava
+                    MessageBox.Show("Login successful!");
 
-                // Sakrijte trenutnu formu
-                this.Hide();
+                    // Otvorite FrmZaposlenici formu
+                    FrmZaposlenici frmZaposlenici = new FrmZaposlenici();
+                    frmZaposlenici.Show();
+
+                    // Sakrijte trenutnu formu
+                    this.Hide();
+                }
+                else
+                {
+                    // Neuspješna prijava
+                    MessageBox.Show("Invalid username or password!");
+                }
             }
             else
             {
-                // Neuspješna prijava
-                MessageBox.Show("Invalid username or password!");
+                MessageBox.Show("Invalid username format! Username should be a number.");
             }
         }
 
@@ -63,15 +71,15 @@ namespace SZUUP
             }
             else
             {
-                if (txtUsername.Text == username && txtPassword.Text == password)
+                if (txtUsername.Text == predefinedUsername && txtPassword.Text == predefinedPassword)
                 {
                     MessageBox.Show("Dobrodošli!", "Prijavljeni ste",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Open the FrmUnos form
-                    frmPopisJela frmPopisJela = new frmPopisJela();
-                    frmPopisJela.Show();
-                    this.Hide(); // Hide the current login form
+                    // Otvorite FrmZaposlenici formu
+                    FrmZaposlenici frmZaposlenici = new FrmZaposlenici();
+                    frmZaposlenici.Show();
+                    this.Hide(); // Sakrijte trenutnu formu za prijavu
                 }
                 else
                 {
