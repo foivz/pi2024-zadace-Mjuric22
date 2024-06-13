@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using SZUUP.Models;
 using SZUUP.Repozitoris;
@@ -8,6 +9,8 @@ namespace SZUUP
 {
     public partial class FrmPopisJela : Form
     {
+        private List<Jelo> allJela; // To store all meals
+
         public FrmPopisJela()
         {
             InitializeComponent();
@@ -18,6 +21,7 @@ namespace SZUUP
             btnPretraziJelo.Click += new EventHandler(this.btnPretraziJelo_Click);
             btnUrediJelo.Click += new EventHandler(this.btnUrediJelo_Click);
             btnObrisiJelo.Click += new EventHandler(this.btnObrisiJelo_Click);
+            btnZaposlenici.Click += new EventHandler(this.btnZaposlenici_Click); // Manually added this line
         }
 
         private void FrmPopisJela_Load(object sender, EventArgs e)
@@ -27,10 +31,10 @@ namespace SZUUP
 
         private void ShowJela()
         {
-            List<Jelo> jela = JeloRepozitorij.GetJela();
-            if (jela != null && jela.Count > 0)
+            allJela = JeloRepozitorij.GetJela(); // Get all meals and store them
+            if (allJela != null && allJela.Count > 0)
             {
-                dgvJela.DataSource = jela;
+                dgvJela.DataSource = allJela;
                 dgvJela.Columns["Id_jelo"].DisplayIndex = 0;
                 dgvJela.Columns["Id_Kategorija"].DisplayIndex = 1;
                 dgvJela.Columns["Naziv"].DisplayIndex = 2;
@@ -59,19 +63,13 @@ namespace SZUUP
                 return;
             }
 
-            bool found = false;
-            foreach (DataGridViewRow row in dgvJela.Rows)
-            {
-                if (row.Cells["Naziv"].Value != null && row.Cells["Naziv"].Value.ToString().Equals(searchQuery, StringComparison.OrdinalIgnoreCase))
-                {
-                    row.Selected = true;
-                    dgvJela.FirstDisplayedScrollingRowIndex = row.Index; // Scroll to the selected row
-                    found = true;
-                    break;
-                }
-            }
+            var filteredJela = allJela.Where(j => j.Naziv.Equals(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
 
-            if (!found)
+            if (filteredJela.Count > 0)
+            {
+                dgvJela.DataSource = filteredJela;
+            }
+            else
             {
                 MessageBox.Show("Jelo nije pronađeno.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -127,5 +125,12 @@ namespace SZUUP
         {
             // Handle form load event if needed
         }
+
+        private void btnZaposlenici_Click(object sender, EventArgs e)
+        {
+            FrmZaposlenici frmZaposlenici = new FrmZaposlenici();
+            frmZaposlenici.ShowDialog();
+        }
+
     }
 }
