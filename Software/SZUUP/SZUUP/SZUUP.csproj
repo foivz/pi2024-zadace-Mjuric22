@@ -50,12 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPopisJela.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPopisJela.Designer.cs">
-      <DependentUpon>frmPopisJela.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +66,6 @@
     <Compile Include="Models\Zaposlenik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repozitoris\RepozitorijJelo.cs" />
-    <Compile Include="Repozitoris\RepozitorijZaposlenik.cs" />
-    <EmbeddedResource Include="frmPopisJela.resx">
-      <DependentUpon>frmPopisJela.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,8 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dlls\DBLayer.dll" />
+    <Content Include="DLLs\DBLayer.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Repozitoris\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
