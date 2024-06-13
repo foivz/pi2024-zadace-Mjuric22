@@ -62,15 +62,26 @@
     <Compile Include="FrmUnos.Designer.cs">
       <DependentUpon>FrmUnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmZaposlenici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZaposlenici.Designer.cs">
+      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Jelo.cs" />
+    <Compile Include="Models\KonkretniZaposlenik.cs" />
     <Compile Include="Models\Zaposlenik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repozitoris\ZaposlenikRepozitorij.cs" />
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnos.resx">
       <DependentUpon>FrmUnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmZaposlenici.resx">
+      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,8 +108,6 @@
   <ItemGroup>
     <Content Include="DLLs\DBLayer.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repozitoris\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
