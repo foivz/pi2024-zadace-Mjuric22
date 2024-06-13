@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SZUUP.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SZUUP.Repozitoris
@@ -13,6 +14,12 @@ namespace SZUUP.Repozitoris
     {
         string sql = $"SELECT * FROM zaposlenik WHERE Kor_ime = '{Kor_ime}'";
  return FetchZaposlenik(sql);
+
+        public static Zaposlenik GetZaposlenik(string username)
+        {
+            // Pretpostavljena implementacija metode
+            // Vratite odgovarajućeg zaposlenika temeljem korisničkog imena
+        }   
     }
     public static Zaposlenik GetZaposlenik(int id)
     {

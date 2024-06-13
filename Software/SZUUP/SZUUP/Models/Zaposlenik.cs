@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace SZUUP.Models
 {
-    internal class Zaposlenik
+    public abstract class Zaposlenik
     {
         public int Id_zaposlenika { get; set; }
-        public string Kor_ime { get; set; }
+        public string KorisnickoIme { get; set; }
         public string Lozinka { get; set; }
+        public int GodineIskustva { get; set; }
+        public string RadnoMjesto { get; set; }
+        public override string ToString()
+        {
+            return KorisnickoIme + " - " + RadnoMjesto;
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SZUUP.Repozitoris;
 
 namespace SZUUP
 {
@@ -29,7 +30,7 @@ namespace SZUUP
             // Provjera korisničkih podataka
             var zaposlenik = RepozitorijZaposlenik.GetZaposlenik(username);
 
-            if (zaposlenik != null && student.Password == password)
+            if (zaposlenik != null && zaposlenik.Password == password)
             {
                 // Uspješna prijava
                 MessageBox.Show("Login successful!");
@@ -68,7 +69,6 @@ namespace SZUUP
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Open the FrmUnos form
-                    
                     frmPopisJela frmPopisJela = new frmPopisJela();
                     frmPopisJela.Show();
                     this.Hide(); // Hide the current login form
